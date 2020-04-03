@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+	<h1 class="text-center">Predicted Result</h1>
+    <br>
+    <br>
+    <br>
+	<h3 class="text-center">{{prediction}}</h3>
+	<br>
+	<br>
+	<br>
+    <div class="col-md-12 text-center"> 
+	<a href="{% url 'home' %}" class=""><button type="button" class="btn btn-primary btn-lg">Retrun to Home</button></a>
+</div>
+
+</body>
+</html>

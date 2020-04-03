@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index page</title>
+	{% load static %}
+	<!--<link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css' %}">-->
+	<link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+	<form class="form-group row" action="{% url 'result' %}">
+		{% csrf_token %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-10">
+					<h1 class="text-center">Heart Disease Prediction</h1>
+					<hr>
+					<!-- New Input -->
+		            <label class="label col-md-10 control-label">Age - عمر</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="age" placeholder="age" required>
+			         </div>	
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">Gender - الجنس</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="sex" placeholder="gender" required>
+			             <small> ذكر = ١ ، انثى = ٠</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">chest pain type - نوع الم الصدر</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="cp" placeholder="cp" required>
+			             <small>الذبحه الصدرية النموذجية = ١ ، الذبحة الصدرية الغير نمطية = ٢ ، الم غير زاوي = ٣ ، بدون اعراض ظاهرة = ٤</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">resting blood pressure - راحة ضغط الدم</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="trestbps" placeholder="trestbps" required>
+			             <small>ضغط الدم مثال ١٤٠ او ١٢٠</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">cholestrol - كوليسترول</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="chol" placeholder="cholestrol" required>
+			             <small>نسبة الكوليسترول في الجسم مثال ٢٠٠ او ٢١٠</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">fasting blood sugar - نسبة السكر في الدم</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="fbs" placeholder="fbs" required>
+			             <small>اقل عن ١٢٠ مل = ٠ / اكثر عن ١٢٠ مل = ١</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">rest ecg - تخطيط القلب</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="restecg" placeholder="restecg" required>
+			             <small>عادي  = ٠ ، شذوذ الموجة = ١، تضخم البطين الايسر = ٢</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">max heart rate achived - الحد الاقصى لمعدل ضربات القلب</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="thalach" placeholder="thalach" required>
+			             <small>نسبة ضربات القلب</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">exercise induced angina - ذبحة صدرية ناجمة عن التمرين</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="exang" placeholder="exang" required>
+			             <small> لا = ٠ ، نعم = ١</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">st depression - الاكتئاب</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="oldpeak" placeholder="oldpeak" required>
+			             <small>نسبة الاكتئاب مثال ٠.١ او ٠.٢</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">st slope - الميل</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="slope" placeholder="slope" required>
+			             <small>منتفخ = ١ ، مسطح = ٢ ، مائل = ٣</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">number of vessels - عدد الاوعية الدموية الرئيسية</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="ca" placeholder="ca" required>
+			             <small>عدد الاوعية الدموية ١ او ٢ او ٣</small>
+			         </div>
+                    <!-- New Input -->
+		            <label class="label col-md-10 control-label">thalassemia - الثلاسيميا</label>
+		            <div class="col-md-7">
+			             <input type="text" class="form-control" name="thal" placeholder="thal" required>
+			             <small>عادي = ١ ، عيب ثابت = ٢، عيب قابل للعكس = ٣</small>
+			         </div>
+			         <button type="submit" class="btn btn-primary">Submit</button>
+
+				    </div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+		
+	</form>
+    <!--<script type="text/javascript" src="{% static 'bootstrap/css/js/bootstrap.min.js' %}"></script>-->
+    <script type="text/javascript" src="{% static 'bootstrap/css/js/bootstrap.js' %}"></script>
+</body>
+</html>
